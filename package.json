@@ -1,7 +1,7 @@
 {
   "name": "dsh-session-admin",
   "version": "0.1.0",
-  "description": "DSH web plugin: session management 鈥?a per-session Delete (archive) action in the conversation header and an Archived chats manager in Settings (view, restore, export, or permanently delete).",
+  "description": "DSH web plugin: session management - a per-session Delete (archive) action in the conversation header and an Archived chats manager in Settings (view, restore, export, or permanently delete).",
   "type": "module",
   "repository": {
     "type": "git",

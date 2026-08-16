@@ -1,13 +1,13 @@
 /**
  * Build both halves of dsh-session-admin.
  *
- * Host  (lib/index.js):  plain ESM cordis plugin (apply/inject/name) 鈥?the
+ * Host  (lib/index.js):  plain ESM cordis plugin (apply/inject/name) - the
  *                        profile's Node loader imports it like any package.
  * Client (lib/client.js): a CJS-form bundle wrapped in the browser module
  *                        system's factory protocol
  *                        (window.__ModuleLoader__.load({id, factory})), with
  *                        the module-table seed words externalized (react,
- *                        ui-primitives, 鈥? and the plugin-owned CSS inlined
+ *                        ui-primitives, ...) and the plugin-owned CSS inlined
  *                        into a <style data-plugin="dsh-session-admin"> tag
  *                        (the loader inventories it for HMR teardown).
  */
