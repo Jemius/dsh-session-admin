@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build output (lib/ is committed — it is the publish artifact and the
+# profile boots straight from it; keep it in the repo for source installs)
+lib/*.js.map
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
