@@ -14,3 +14,6 @@ npm-debug.log*
 Thumbs.db
 .vscode/
 .idea/
+
+pnpm-lock.yaml
+pnpm-workspace.yaml
