@@ -225,7 +225,7 @@ export async function listArchived(ctx: HostContext): Promise<ArchivedChatItem[]
     try {
       for (const header of await persistence.list()) headers.set(String(header.id), header)
     } catch (error) {
-      ctx.logger.warn(`[dsh-session-manager] persistence list failed: ${String(error)}`)
+      ctx.logger.warn(`[dsh-session-admin] persistence list failed: ${String(error)}`)
     }
   }
   for (const id of archived) {
@@ -242,7 +242,7 @@ export async function listArchived(ctx: HostContext): Promise<ArchivedChatItem[]
       try {
         title = (await query.readTitle(id))?.title ?? null
       } catch (error) {
-        ctx.logger.warn(`[dsh-session-manager] title read failed for ${id}: ${String(error)}`)
+        ctx.logger.warn(`[dsh-session-admin] title read failed for ${id}: ${String(error)}`)
       }
     }
     const running = sessions?.get(id) !== undefined && sessionHasOpenTurn(sessions.get(id)!)
@@ -411,7 +411,7 @@ async function detachIdleLiveSession(ctx: HostContext, sessions: unknown, sessio
     if ((entry as { id?: string })?.id !== sessionId) return
     store.detachEntered(entry)
   } catch (error) {
-    ctx.logger.warn(`[dsh-session-manager] failed to detach idle live session ${sessionId}: ${String(error)}`)
+    ctx.logger.warn(`[dsh-session-admin] failed to detach idle live session ${sessionId}: ${String(error)}`)
   }
 }
 
@@ -479,7 +479,7 @@ export async function deleteArchived(ctx: HostContext, sessionId: string): Promi
       }
     }
   } catch (error) {
-    ctx.logger.warn(`[dsh-session-manager] workspace account cleanup failed for ${sessionId}: ${String(error)}`)
+    ctx.logger.warn(`[dsh-session-admin] workspace account cleanup failed for ${sessionId}: ${String(error)}`)
   }
 
   // Projection-cache row cleanup (the platform has no prune path; rows are
@@ -489,7 +489,7 @@ export async function deleteArchived(ctx: HostContext, sessionId: string): Promi
     const cacheTable = cacheDomain?.table('sessions')
     if (cacheTable !== undefined) await cacheTable.delete(sessionId)
   } catch (error) {
-    ctx.logger.warn(`[dsh-session-manager] projection cache cleanup failed for ${sessionId}: ${String(error)}`)
+    ctx.logger.warn(`[dsh-session-admin] projection cache cleanup failed for ${sessionId}: ${String(error)}`)
   }
 
   // Archive-set removal LAST: every fallible step above has succeeded.

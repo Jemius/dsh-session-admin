@@ -1,5 +1,5 @@
 /**
- * Host half of dsh-session-manager: mounts the fenced
+ * Host half of dsh-session-admin: mounts the fenced
  * /session-manager/api JSON routes (list / read / delete) and registers the
  * optional sessionQuery-based archive persistence hook. The row is inserted
  * after every stock web row, so webServer and workspaceRegistry exist when
@@ -84,5 +84,5 @@ export function apply(ctx: HostContext): void {
       const result = await callApi(ctx, method, payload)
       writeJson(res, result.ok ? 200 : 400, result)
     },
-  }), 'dsh-session-manager: /session-manager/api routes')
+  }), 'dsh-session-admin: /session-manager/api routes')
 }

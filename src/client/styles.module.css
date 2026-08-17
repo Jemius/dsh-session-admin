@@ -3,7 +3,7 @@
  * every class is scoped to `styles_*` — no collision with the stock UI or
  * other plugins is possible. Colors ride the shared --dsw-alias-* tokens so
  * light/dark themes apply automatically. The build inlines the emitted CSS
- * into a <style data-plugin="dsh-session-manager"> tag (the loader
+ * into a <style data-plugin="dsh-session-admin"> tag (the loader
  * inventories it for HMR teardown).
  */
 

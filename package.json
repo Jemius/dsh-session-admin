@@ -1,6 +1,6 @@
 {
   "name": "dsh-session-admin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "DSH web plugin: session management - a per-session Delete (archive) action in the conversation header and an Archived chats manager in Settings (view, restore, export, or permanently delete).",
   "type": "module",
   "repository": {
@@ -57,7 +57,8 @@
     "scripts/build.mjs",
     "cordis.patch.yml",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "docs/*.png"
   ],
   "scripts": {
     "build": "node scripts/build.mjs",

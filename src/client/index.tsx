@@ -1,5 +1,5 @@
 /**
- * Client half of dsh-session-manager:
+ * Client half of dsh-session-admin:
  * - registers the plugin's zh/en dictionaries into the shared locale registry,
  * - contributes the "已归档的聊天 / Archived chats" page to the Settings
  *   shell through the `settings.section` slot,
@@ -72,7 +72,7 @@ export function apply(ctx: ClientContext): void {
     const offZh = ctx.locale.register(LOCALE_NS, 'zh', zh)
     const offEn = ctx.locale.register(LOCALE_NS, 'en', en)
     return () => { offZh(); offEn() }
-  }, 'dsh-session-manager: dictionaries')
+  }, 'dsh-session-admin: dictionaries')
 
   // The Archived chats settings page. The shell resolves the locale-following
   // label thunk on each nav projection, so language switches relabel the nav
@@ -82,7 +82,7 @@ export function apply(ctx: ClientContext): void {
     id: 'session-archive',
     order: 110,
     label: () => t('nav'),
-    registrant: 'dsh-session-manager',
+    registrant: 'dsh-session-admin',
     inject: () => ({}),
   }, ArchivedSection))
 
@@ -92,7 +92,7 @@ export function apply(ctx: ClientContext): void {
     name: 'conversation.session.header.actions',
     id: 'session-manager-delete',
     order: 50,
-    registrant: 'dsh-session-manager',
+    registrant: 'dsh-session-admin',
     inject: () => ({}),
   }, HeaderDeleteAction))
 }
